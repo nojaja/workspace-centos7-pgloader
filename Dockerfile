@@ -39,7 +39,7 @@ RUN set -x \
 # Install openssh
     && yum -y install openssh-server passwd \
 # Install common tools
-    && yum -y install net-tools zip unzip \
+    && yum -y install rpmdevtools yum-utils net-tools zip unzip \
     #
 # Install git
     && yum -y install https://centos7.iuscommunity.org/ius-release.rpm \
@@ -78,7 +78,7 @@ RUN set -x \
     && rm -rf /var/cache/yum/* \
     && yum clean all
 # Switch back to dialog for any ad-hoc use of apt-get
-ENV DEBIAN_FRONTEND=
+# ENV DEBIAN_FRONTEND=
 
 EXPOSE 22
 ENTRYPOINT [ "/usr/sbin/sshd", "-D" ]
