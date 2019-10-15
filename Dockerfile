@@ -56,6 +56,7 @@ RUN set -x \
     && chmod 0440 /etc/sudoers.d/$USERNAME \
     #
 # make pgloader 
+    && yum -y install make \
     && git clone https://github.com/dimitri/pgloader.git $HOME/workspace/pgloader \
     && chmod +x $HOME/workspace/pgloader/bootstrap-centos7.sh \
     && $HOME/workspace/pgloader/bootstrap-centos7.sh \
