@@ -21,7 +21,6 @@ ARG USER_GID=$USER_UID
 ARG PROXY=''
 ARG no_proxy='127.0.0.1,localhost,192.168.99.100,192.168.99.101,192.168.99.102,192.168.99.103,192.168.99.104,192.168.99.105,172.17.0.1'
 
-ENV JAVA_HOME=/usr/lib/jvm/adoptopenjdk-8-hotspot
 
 # 自己証明が必要な場合はここで組み込む
 ADD /etc/ssl/certs/      /etc/ssl/certs/
