@@ -60,7 +60,10 @@ RUN set -x \
     && git clone https://github.com/dimitri/pgloader.git $HOME/workspace/pgloader \
     && chmod +x $HOME/workspace/pgloader/bootstrap-centos7.sh \
     && $HOME/workspace/pgloader/bootstrap-centos7.sh \
-    && make -d -C $HOME/workspace/ pgloader \
+    && echo "----<make>----------------------------------------" \
+    && make -d -w -C $HOME/workspace/ pgloader \
+    && ls $HOME/workspace/pgloader/build/bin/ \
+    && $HOME/workspace/pgloader/build/bin/pgloader --help \
     #
 # 空パスワードの場合は以下をコメントアウト
     && sed -ri 's/^#PermitEmptyPasswords no/PermitEmptyPasswords yes/' /etc/ssh/sshd_config \
