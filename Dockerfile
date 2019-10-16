@@ -60,7 +60,7 @@ RUN set -x \
     && git clone https://github.com/dimitri/pgloader.git $HOME/workspace/pgloader \
     && chmod +x $HOME/workspace/pgloader/bootstrap-centos7.sh \
     && $HOME/workspace/pgloader/bootstrap-centos7.sh \
-    && cd $HOME/workspace/ \
+    && cd $HOME/workspace/pgloader \
     && echo "----<make -n>----------------------------------------" \
     && make -n pgloader \
     && echo "----<make pgloader>----------------------------------------" \
